@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    .button {
+      background-color: blue; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 15px;
+
+    }
+      table{
+        margin-left: auto;
+        margin-right: auto;
+      }
+        td{ /*edit this individual table elements*/
+          height: 50px; width: 50px;
+          background-color: grey;
+          font-size: 24px;
+          text-align: center;
+        }
+        .clicked{/*edit this --- td will have this property when clicked but not won*/
+            background-color: cyan;
+            color: white;
+        }
+        .wonGold{/*edit this --- td will have this property when that click was the winning click*/
+          background-image: url(trophy.jpg);
+          background-size: 50px 60px;
+        }
+        .lostRed{/*edit this --- td will have this property when that click was the losing one*/
+          background-image: url(mine.jpeg);
+          background-size: contain;
+        }
+        #movesLeft{/*edit this --> score counter*/
+            margin-left: 582px;
+            display: inline-block;
+            width: 100px; height: 100px;
+            border: 2px solid black;
+            text-align: center;
+            font-family: monospace;
+            font-size: 15px;
+        }
+        #winBanner, #loseBanner{/*edit this --> pops when game won*/
+            display: none;
+            position: absolute;
+            height: 210px;
+            width: 210px;
+            background-color: white;
+            top:50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+
+        }
+        #winBanner {
+          background-color: green;
+          padding-left: 10px;
+          text-align: center;
+        }
+        #loseBanner {
+          background-color: red;
+          color: blue;
+          padding-left: 10px;
+          text-align: center;
+        }
+
+    </style>
+
+  </head>
+  <body>
+      <table id="myTable">
+        <tr class="rows">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+      </table>
+
+      <span id="movesLeft"> Moves Left <br> <h2 id="score"></h2></span><!-- score counter -->
+
+      <div id = "winBanner"><!-- pops when game won -->
+          <h2>Congratulations!! you won</h2>
+          <button class = "button" type="button" name="button" id="wonRetry"> new Game</button>
+      </div>
+
+      <div id = "loseBanner"><!-- pops when game lost -->
+          <h2>Not this time Eh! Lets have another round</h2>
+          <button class = "button" type="button" name="button" id="lostRetry"> Retry </button>
+      </div>
+
+
+
+      <script src="minesweeperLogic.js">
+      </script>
+
+  </body>
+</html>
